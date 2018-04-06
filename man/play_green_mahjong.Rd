@@ -12,6 +12,6 @@ Game created by \href{https://daniel-beck.org/impressum/}{Daniel Beck}.
 }
 \examples{
 \dontrun{
-play_2048()
+play_green_mahjong()
 }
 }
