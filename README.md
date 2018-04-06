@@ -15,11 +15,15 @@ devtools::install_github('RLesur/Rcade')
 ## Example
 
 ``` r
-rcade::play_2048()
+Rcade::play_2048()
 ```
 
 ``` r
-rcade::play_green_mahjong()
+Rcade::play_green_mahjong()
+```
+
+``` r
+Rcade::play_captain_rogers()
 ```
 
 ## Credits
@@ -39,4 +43,11 @@ Game created by [Daniel Beck](https://daniel-beck.org/impressum/).
 Github : https://github.com/danbeck/green-mahjong
 
 License : [GPL-3](https://github.com/danbeck/green-mahjong/blob/master/GreenMahjong/www/COPYING)
+
+### Captain Rogers: Asteroid Belt of Sirius
+
+Original game created by [Andrezj Mazur](http://end3r.com/) : andrzej.mazur@end3r.com
+
+License : This game demo is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International** (CC BY-NC 4.0). See the [human-readable summary](http://creativecommons.org/licenses/by-nc/4.0/) or [legalcode](http://creativecommons.org/licenses/by-nc/4.0/legalcode) for details.
+
 

@@ -1,0 +1,59 @@
+{
+    "version": "1.3.3",
+    "name": "Captain Rogers",
+    "description": "It's simple, yet very engaging game about brave Captain Rogers and his escape through an asteroid field. Tap the screen to fly up, release to fly down. Collect the stars and shields, avoid asteroids and mines. Grab the bomb to blow up everything on screen!",
+    "launch_path": "/index.html",
+    "appcache_path": "/offline.appcache",
+    "icons": {
+        "16": "/icons/icon16.png",
+        "30": "/icons/icon30.png",
+        "32": "/icons/icon32.png",
+        "48": "/icons/icon48.png",
+        "60": "/icons/icon60.png",
+        "64": "/icons/icon64.png",
+        "90": "/icons/icon90.png",
+        "120": "/icons/icon120.png",
+        "128": "/icons/icon128.png",
+        "256": "/icons/icon256.png"
+    },
+    "developer": {
+        "name": "Enclave Games",
+        "url": "http://enclavegames.com"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {},
+    "fullscreen": "true",
+    "type": "web",
+    "locales": {
+        "pl": {
+            "name": "Kapitan Rogers",
+            "description": "To prosta, ale bardzo wciągająca gra o dzielnym Kapitanie Rogersie i jego ucieczce poprzez pas asteroid. Tapnij ekran by polecieć w górę, puść by lecieć w dół. Zbieraj gwiazdy i tarcze, unikaj asteroid i min. Złap bombę by wysadzić w powietrze wszystko na ekranie!"
+        },
+        "es": {
+            "name": "Capitán Rogers",
+            "description": "Es un juego sencillo pero muy adictivo sobre el valiente Capitán Rogers y su huida a través de un campo de asteroides. Presiona la pantalla para ascender, deja de presionar para descender. Recoge las estrellas y armaduras, evita asteroides y minas. Coge la bomba para hacer estallar todo en la pantalla!"
+        },
+        "fr": {
+            "name": "Capitaine Rogers",
+            "description": "C'est l'histoire, intense et poignante, du Capitaine Rogers et de sa fuite à travers le grand nuage d'astéroïdes. Touchez l'écran pour monter, lâchez pour redescendre. Attrapez les étoiles et les boucliers, évitez les astéroïdes et les mines. Il y a aussi une bombe qui fait quand même tout exploser à l'écran!"
+        },
+        "hu": {
+            "name": "Rogers Kapitány",
+            "description": "Ebben az egyszerű, ám annál szórakoztatóbb játékban a vakmerő Rogers Kapitány űrhajóját irányítva kell átjutnod egy veszélyes aszteroidamezőn. Tartsd az ujjadat a kijelzőn az emelkedéshez és engedd fel a süllyedéshez. Gyűjtsd a pajzsokat és csillagokat, miközben igyekezz elkerülni a feléd tartó aknákat és aszteroidákat. Vedd fel a bombákat, így ha szorul a hurok felrobbanthatod velük a képernyőn levő összes akadályt."
+        },
+        "de": {
+            "name": "Captain Rogers",
+            "description": "Ein simples, aber fesselndes Spiel über den mutigen Captain Rogers und seine Flucht durch ein Asteroidenfeld. Berühre den Bildschirm um hoch oder runter zu fliegen. Sammle Sterne und Schilde, weiche Asteroiden und Minen aus. Ergatter Bomben um alle Hindernisse auf dem Bildschirm zu sprengen!"
+        },
+        "ja": {
+            "name": "キャプテン・ロジャース",
+            "description": "勇敢なキャプテン・ロジャースと彼の小惑星の戦場からの脱出に関するシンプルでありながら、とても魅力的なゲームです。飛び上がるには画面をタップ、飛び下がるにはリリース。星と盾をコレクト（収集）して、小惑星や地雷を避けろ。画面上のすべてを爆破するために爆弾を掴め！"
+        },
+        "cs": {
+            "name": "Kapitán Rogers",
+            "description": "Je to jednoduchá, přesto velmi podmanivá hra o Kapitánu Rogersovi a jeho úniku skrz pole asteroidů. Klepnutím na obrazovku leťte nahoru, uvolněním leťte dolů. Sbírejte hvězdy a štíty, vyhýbejte se asteroidům a minám. Chyťte bombu a vyhoďte do povětří všechno, co je na obrazovce!"
+        }
+    },
+    "orientation": "landscape"
+}
