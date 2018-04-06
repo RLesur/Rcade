@@ -1,0 +1,15 @@
+{
+    "architecture": "all",
+    "description": "Green Mahjong is a solitaire mahjong game",
+    "framework": "ubuntu-sdk-14.10-dev2",
+    "hooks": {
+        "app": {
+            "apparmor": "app.json",
+            "desktop": "app.desktop"
+        }
+    },
+    "maintainer": "Daniel Beck <d.danielbeck@googlemail.com>",
+    "name": "com.ubuntu.developer.danielbeck.greenmahjong",
+    "title": "Green Mahjong",
+    "version": "2.2.1"
+}

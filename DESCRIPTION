@@ -1,0 +1,14 @@
+Package: Rcade
+Title: Procrastinate with games in RStudio
+Version: 0.0.0.9000
+Authors@R: c(
+  person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
+  person("Gabriele", "Cirulli", role = "cph", comment = "2048 Game"),
+  person("Daniel", "Beck", role = "aut", comment = "Green Mahjong")
+  )
+Description: With Rcade, you can launch some games in RStudio.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1

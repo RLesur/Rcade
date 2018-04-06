@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Green Mahjong
+Comment=Green Mahjong is a solitaire mahjong game 
+Type=Application
+Icon=greenmahjong.png
+Exec=webapp-container --store-session-cookies --webappUrlPatterns=https?://greenmahjong.daniel-beck.org/* http://greenmahjong.daniel-beck.org %u
+Terminal=false
+X-Ubuntu-Touch=true
+
