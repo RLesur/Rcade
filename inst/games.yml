@@ -1,0 +1,9 @@
+mario:
+  github: RcadeRepos/mariohtml5
+  github: ho
+  use_servr: false
+  path: main.html
+pacman:
+  github: RcadeRepos/pacman
+  use_servr: false
+  path: index.html
