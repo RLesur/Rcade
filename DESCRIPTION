@@ -7,6 +7,7 @@ Authors@R: c(
   person("Daniel", "Beck", role = "aut", comment = "Green Mahjong")
   )
 Description: With Rcade, you can launch some games in RStudio.
+Imports: utils
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

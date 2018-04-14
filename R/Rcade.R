@@ -1,3 +1,6 @@
+#' @importFrom utils browseURL
+NULL
+
 #' 2048
 #'
 #' Game created by [Gabriele Cirulli](https://gabrielecirulli.com/), based on
@@ -49,7 +52,7 @@ play_green_mahjong <- function() {
 #' }
 play_captain_rogers <- function() {
   tmp_dir <- copy_ressources("Captain-Rogers")
-  browseURL(file.path(tmp_dir, "Captain-Rogers", "index.html"))
+  utils::browseURL(file.path(tmp_dir, "Captain-Rogers", "index.html"))
 }
 
 copy_ressources <- function(game) {

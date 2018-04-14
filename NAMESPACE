@@ -3,3 +3,4 @@
 export(play_2048)
 export(play_captain_rogers)
 export(play_green_mahjong)
+importFrom(utils,browseURL)
