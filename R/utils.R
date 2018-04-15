@@ -1,8 +1,11 @@
 #' @import utils
 NULL
 
-# download utils ----------------------------------------------------------
-# from webshot
+# All of these functions comes from the webshot package:
+# Since they are not exported, the code is reproduced below.
+# The webshot package is licensed under the GPL-2 license.
+# Author : Winston Chang
+# Contributors : Yihui Xie, Francois Guillem, Barret Schloerke
 is_windows <- function() .Platform$OS.type == "windows"
 
 download <- function(url, destfile, mode = "w") {

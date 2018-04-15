@@ -7,7 +7,6 @@ NULL
 #' [1024 by Veewo Studio](https://itunes.apple.com/us/app/1024!/id823499224)
 #' and conceptually similar to [Threes by Asher Vollmer](http://asherv.com/threes/).
 #'
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -23,7 +22,6 @@ play_2048 <- function() {
 #' Game created by [Daniel Beck](https://daniel-beck.org/impressum/).
 #' [Github repository](https://github.com/danbeck/green-mahjong).
 #'
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -44,7 +42,6 @@ play_green_mahjong <- function() {
 #' See the [human-readable summary](http://creativecommons.org/licenses/by-nc/4.0/)
 #' or [legalcode](http://creativecommons.org/licenses/by-nc/4.0/legalcode) for details.
 #'
-#' @export
 #'
 #' @examples
 #' \dontrun{

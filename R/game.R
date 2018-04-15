@@ -1,6 +1,8 @@
 #' @import R6 assertthat
 #' @importFrom yaml read_yaml
 #' @importFrom stringr str_split
+#' @importFrom purrr imap
+#' @include utils.R
 NULL
 
 GameCatalog <- R6Class("GameCatalog",
@@ -20,8 +22,12 @@ GameCatalog <- R6Class("GameCatalog",
   )
 )
 
+load_games <- function() {
+  meta <- yaml::read_yaml(system.file("games.yml", package = "Rcade"))
+  meta <- purrr::imap(meta, ~ c(list(name = .y), .x))
+  lapply(meta, function(x) do.call(HTML5Game$new, x))
+}
 
-#' @export
 HTML5Game <- R6Class("HTML5Game",
   public = list(
     # name of the game, it will be the name of the directory inside h
@@ -97,7 +103,6 @@ HTML5Game <- R6Class("HTML5Game",
   )
 )
 
-#' @export
 as.list.HTML5Game <- function(x, ...) {
   l <- list(x$github, x$use_servr, x$path, x$img, x$author, x$description)
   names(l) <- c("github", "use_servr", "path", "img", "author", "description")
@@ -110,3 +115,10 @@ as.list.HTML5Game <- function(x, ...) {
 # mario <- HTML5Game$new("mario", "RcadeRepos/mariohtml5", FALSE, "main.html")
 # a
 # sapply(c(a, a), as.list)
+
+#' Games
+#'
+#' @export
+games <- load_games()
+
+

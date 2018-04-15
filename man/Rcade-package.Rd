@@ -11,14 +11,12 @@ With Rcade, you can launch some games in RStudio.
 \author{
 \strong{Maintainer}: Romain Lesur \email{romain.lesur@gmail.com}
 
-Authors:
-\itemize{
-  \item Daniel Beck (Green Mahjong)
-}
-
 Other contributors:
 \itemize{
-  \item Gabriele Cirulli (2048 Game) [copyright holder]
+  \item Winston Chang \email{winston@rstudio.com} (download functions coming from webshot) [contributor, copyright holder]
+  \item Yihui Xie (download functions coming from webshot) [contributor, copyright holder]
+  \item Francois Guillem (download functions coming from webshot) [contributor, copyright holder]
+  \item Barret Schloerke (download functions coming from webshot) [contributor, copyright holder]
 }
 
 }

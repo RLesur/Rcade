@@ -3,13 +3,20 @@ Title: Procrastinate with games in RStudio
 Version: 0.0.0.9000
 Authors@R: c(
   person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
-  person("Gabriele", "Cirulli", role = "cph", comment = "2048 Game"),
-  person("Daniel", "Beck", role = "aut", comment = "Green Mahjong")
+  person("Winston", "Chang", email = "winston@rstudio.com", role = c("ctb", "cph"), comment = "download functions coming from webshot"),
+  person("Yihui", "Xie", role = c("ctb", "cph"), comment = "download functions coming from webshot"),
+  person("Francois", "Guillem", role = c("ctb", "cph"), comment = "download functions coming from webshot"),
+  person("Barret", "Schloerke", role = c("ctb", "cph"), comment = "download functions coming from webshot")
   )
 Description: With Rcade, you can launch some games in RStudio.
-Imports: utils, R6 (>= 2.0.0), yaml, assertthat, stringr
-License: GPL-3
+Imports: utils, R6 (>= 2.0.0), yaml, assertthat, stringr, purrr
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
+Collate: 
+    'Rcade-package.R'
+    'Rcade.R'
+    'utils.R'
+    'game.R'

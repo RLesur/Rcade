@@ -1,4 +1,12 @@
-mario:
+2048:
+  github: RcadeRepos/2048
+  use_servr : false
+  path: index.html
+GreenMahjong:
+  github: RcadeRepos/green-mahjong
+  use_servr : false
+  path: GreenMahjong/www/index.html
+mariohtml5:
   github: RcadeRepos/mariohtml5
   use_servr: false
   path: main.html
