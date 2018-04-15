@@ -1,7 +1,5 @@
 #' @import R6 assertthat
-#' @importFrom yaml read_yaml
 #' @importFrom stringr str_split
-#' @importFrom purrr imap
 #' @importFrom servr httd
 #' @include utils.R
 NULL
@@ -59,7 +57,7 @@ HTML5Game <- R6Class("HTML5Game",
     is_installed = function() nzchar(system.file("games", private$name, package = "Rcade")[1])
   ),
   private = list(
-    # name of the game, it will be the name of the directory inside h
+    # name of the game, it will be the name of the directory inside games
     name = NULL,
     github = NULL,
     use_servr = NULL,
@@ -87,18 +85,3 @@ HTML5Game <- R6Class("HTML5Game",
     }
   )
 )
-
-load_games <- function() {
-  meta <- yaml::read_yaml(system.file("games", "games.yml", package = "Rcade"))
-  meta <- purrr::imap(meta, ~ c(list(name = .y), .x))
-  lapply(meta, function(x) do.call(HTML5Game$new, x))
-}
-
-#' Games for procRastinatoRs
-#'
-#'
-#'
-#' @export
-games <- load_games()
-
-

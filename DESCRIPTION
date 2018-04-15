@@ -16,6 +16,6 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
 Collate: 
-    'Rcade-package.R'
     'utils.R'
-    'game.R'
+    'HTML5Game.R'
+    'games.R'
