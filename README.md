@@ -22,10 +22,22 @@ Rcade::games$`2048`
 Rcade::games$GreenMahjong
 ```
 
-## Try a new game 
+## How to contribute
+
+### Try a new game 
 
 ``` r
-TMgames <- Rcade:::HTML5Game$new(name = "games", github = "TomMalbran/games", branch = "gh-pages", use_servr = FALSE, path = "index.html")
+TMgames <- Rcade:::HTML5Game$new(name = "TMgames", github = "TomMalbran/games", branch = "gh-pages", need_servr = FALSE, path = "index.html")
+```
+
+``` r
+TMgames
+```
+
+Try with `servr`:
+
+``` r
+TMgames$play(TRUE)
 ```
 
 ## Credits
