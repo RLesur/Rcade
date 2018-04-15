@@ -15,17 +15,17 @@ devtools::install_github('RLesur/Rcade')
 ## Example
 
 ``` r
-Rcade::games$`2048`$play()
+Rcade::games$`2048`
 ```
 
 ``` r
-Rcade::games$GreenMahjong$play()
+Rcade::games$GreenMahjong
 ```
 
 ## Try a new game 
 
 ``` r
-games <- Rcade:::HTML5Game$new(name = "games", github = "TomMalbran/games", branch = "gh-pages", use_servr = FALSE, path = "index.html")
+TMgames <- Rcade:::HTML5Game$new(name = "games", github = "TomMalbran/games", branch = "gh-pages", use_servr = FALSE, path = "index.html")
 ```
 
 ## Credits

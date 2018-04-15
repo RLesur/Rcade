@@ -55,7 +55,10 @@ HTML5Game <- R6Class("HTML5Game",
       unlink(private$name, recursive = TRUE, force = TRUE)
       invisible(self)
     },
-    is_installed = function() nzchar(system.file("games", private$name, package = "Rcade")[1])
+    is_installed = function() nzchar(system.file("games", private$name, package = "Rcade")[1]),
+    print = function(...) {
+      self$play()
+    }
   ),
   private = list(
     # name of the game, it will be the name of the directory inside games
