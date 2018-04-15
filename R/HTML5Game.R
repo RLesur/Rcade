@@ -8,7 +8,14 @@ NULL
 HTML5Game <- R6Class("HTML5Game",
   public = list(
     # relative path inside the directory
-    initialize = function(name, github = NULL, branch = "master", path, need_servr, img = NULL, author = NULL, description = NULL) {
+    initialize = function(name,
+                          github = NULL,
+                          branch = "master",
+                          path,
+                          need_servr,
+                          img = NULL,
+                          author = NULL,
+                          description = NULL) {
       assert_that(is.string(name))
       if (!is.null(github)) assert_that(is.string(github))
       if (!is.null(github)) assert_that(length(stringr::str_split(github, "/")[[1]]) == 2, msg = "Invalid github argument.")
@@ -36,8 +43,9 @@ HTML5Game <- R6Class("HTML5Game",
           return(invisible(self))
         }
       }
-      if (missing(need_servr))
+      if (missing(need_servr)) {
         need_servr <- private$need_servr
+      }
       tmp_dir <- private$copy_ressources()
       if (need_servr) {
         servr::httd(file.path(tmp_dir, private$name), initpath = private$path)
@@ -52,14 +60,16 @@ HTML5Game <- R6Class("HTML5Game",
       owd <- setwd(tempdir())
       on.exit(setwd(owd), add = TRUE)
       zipfile <- paste0(private$name, ".zip")
-      download(url, zipfile, mode = 'wb')
+      download(url, zipfile, mode = "wb")
       utils::unzip(zipfile)
       unlink(zipfile, force = TRUE)
       assert_that(file.rename(paste0(repo_name, "-", private$branch), private$name),
-                  msg = "Unable to rename temporary directory.")
+        msg = "Unable to rename temporary directory."
+      )
       dest_dir <- system.file("games", package = "Rcade")[1]
       assert_that(file.copy(private$name, dest_dir, recursive = TRUE),
-                  msg = paste0("Unable to copy source game in ", dest_dir, "."))
+        msg = paste0("Unable to copy source game in ", dest_dir, ".")
+      )
       unlink(private$name, recursive = TRUE, force = TRUE)
       invisible(self)
     },
@@ -110,8 +120,10 @@ HTML5Game <- R6Class("HTML5Game",
         )
       } else {
         switch(utils::menu(c(yes, no),
-                           title = paste0(private$name, " is not installed.\n", question)),
-               TRUE, FALSE)
+          title = paste0(private$name, " is not installed.\n", question)
+        ),
+        TRUE, FALSE
+        )
       }
     }
   )

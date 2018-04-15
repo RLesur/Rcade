@@ -11,11 +11,9 @@ is_windows <- function() .Platform$OS.type == "windows"
 download <- function(url, destfile, mode = "w") {
   if (getRversion() >= "3.3.0") {
     download_no_libcurl(url, destfile, mode = mode)
-
   } else if (is_windows() && getRversion() < "3.2") {
     # Older versions of R on Windows need setInternet2 to download https.
     download_old_win(url, destfile, mode = mode)
-
   } else {
     utils::download.file(url, destfile, mode = mode)
   }
@@ -27,7 +25,6 @@ download_no_libcurl <- function(url, ...) {
   if (is_windows()) {
     method <- "wininet"
     utils::download.file(url, method = method, ...)
-
   } else {
     # If non-Windows, check for libcurl/curl/wget/lynx, then call download.file with
     # appropriate method.
@@ -43,7 +40,6 @@ download_no_libcurl <- function(url, ...) {
       on.exit(options(download.file.extra = orig_extra_options))
 
       options(download.file.extra = paste("-L", orig_extra_options))
-
     } else if (nzchar(Sys.which("lynx")[1])) {
       method <- "lynx"
     } else {
@@ -58,7 +54,7 @@ download_no_libcurl <- function(url, ...) {
 # Adapted from downloader::download, for R<3.2 on Windows
 download_old_win <- function(url, ...) {
   # If we directly use setInternet2, R CMD CHECK gives a Note on Mac/Linux
-  seti2 <- `::`(utils, 'setInternet2')
+  seti2 <- `::`(utils, "setInternet2")
 
   # Check whether we are already using internet2 for internal
   internet2_start <- seti2(NA)
