@@ -28,7 +28,7 @@ HTML5Game <- R6Class("HTML5Game",
       private$description <- description
     },
     play = function(use_servr) {
-      if (!self$installed) self$install()
+      if (!self$is_installed()) self$install()
       if (missing(use_servr))
         use_servr <- private$use_servr
       tmp_dir <- private$copy_ressources()
@@ -50,15 +50,13 @@ HTML5Game <- R6Class("HTML5Game",
       unlink(zipfile, force = TRUE)
       assert_that(file.rename(paste0(repo_name, "-master"), private$name),
                   msg = "Unable to rename temporary directory.")
-      dest_dir <- system.file("h", package = "Rcade")[1]
+      dest_dir <- system.file("games", package = "Rcade")[1]
       assert_that(file.copy(private$name, dest_dir, recursive = TRUE),
                   msg = paste0("Unable to copy source game in ", dest_dir, "."))
       unlink(private$name, recursive = TRUE, force = TRUE)
       invisible(self)
-    }
-  ),
-  active = list(
-    installed = function() nzchar(system.file("h", private$name, package = "Rcade")[1])
+    },
+    is_installed = function() nzchar(system.file("games", private$name, package = "Rcade")[1])
   ),
   private = list(
     # name of the game, it will be the name of the directory inside h
@@ -70,7 +68,7 @@ HTML5Game <- R6Class("HTML5Game",
     author = NULL,
     description = NULL,
     copy_ressources = function() {
-      game_dir <- system.file("h", private$name, package = "Rcade", mustWork = TRUE)[1]
+      game_dir <- system.file("games", private$name, package = "Rcade", mustWork = TRUE)[1]
       tmp_dir <- file.path(tempdir(), "Rcade_game")
       if (!dir.exists(tmp_dir)) dir.create(tmp_dir)
       if (file.copy(game_dir, tmp_dir, recursive = TRUE)) {
@@ -91,7 +89,7 @@ HTML5Game <- R6Class("HTML5Game",
 )
 
 load_games <- function() {
-  meta <- yaml::read_yaml(system.file("games.yml", package = "Rcade"))
+  meta <- yaml::read_yaml(system.file("games", "games.yml", package = "Rcade"))
   meta <- purrr::imap(meta, ~ c(list(name = .y), .x))
   lapply(meta, function(x) do.call(HTML5Game$new, x))
 }

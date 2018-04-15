@@ -24,7 +24,7 @@ Rcade::games$GreenMahjong$play()
 
 ## Credits
 
-This package includes some utilitary functions of the `webshot` package: since these functions are not exported, the source code is included in the `Rcade` package.  
+This package includes non exported functions of the `webshot` package: since they are not exported, the source code is included in the `Rcade` package.  
 `webshot` package author: Winston Chang  
 `webshot` package contributors: Yihui Xie, Francois Guillem, Barret Schloerke
 
