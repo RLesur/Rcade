@@ -3,12 +3,12 @@
 \docType{data}
 \name{games}
 \alias{games}
-\title{Games}
-\format{An object of class \code{list} of length 4.}
+\title{Games for procRastinatoRs}
+\format{An object of class \code{list} of length 9.}
 \usage{
 games
 }
 \description{
-Games
+Games for procRastinatoRs
 }
 \keyword{datasets}
