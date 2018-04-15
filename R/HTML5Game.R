@@ -80,7 +80,12 @@ HTML5Game <- R6Class("HTML5Game",
         file.path_args <- as.list(c(tmp_dir, private$name, stringr::str_split(private$path, "/")[[1]]))
         game_file <- do.call(file.path, args = file.path_args)
         #game_file <- file.path(tmp_dir, private$name, private$path)
-        getOption("viewer")(game_file, "maximize")
+        viewer <- getOption("viewer")
+        if (is.null(viewer)) {
+          utils::browseURL(game_file)
+        } else {
+          viewer(game_file, "maximize")
+        }
       }
     }
   )

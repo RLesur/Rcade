@@ -3,13 +3,26 @@ Title: Procrastinate with games in RStudio
 Version: 0.0.0.9100
 Authors@R: c(
   person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
-  person("Winston", "Chang", email = "winston@rstudio.com", role = c("ctb", "cph"), comment = "download functions coming from webshot"),
-  person("Yihui", "Xie", role = c("ctb", "cph"), comment = "download functions coming from webshot"),
-  person("Francois", "Guillem", role = c("ctb", "cph"), comment = "download functions coming from webshot"),
-  person("Barret", "Schloerke", role = c("ctb", "cph"), comment = "download functions coming from webshot")
+  person("Winston", "Chang", email = "winston@rstudio.com", role = c("ctb", "cph"), 
+         comment = "download helpers from webshot package"),
+  person("Yihui", "Xie", role = c("ctb", "cph"), 
+         comment = "download helpers from webshot package"),
+  person("Francois", "Guillem", role = c("ctb", "cph"), 
+         comment = "download helpers from webshot package"),
+  person("Barret", "Schloerke", role = c("ctb", "cph"), 
+         comment = "download helpers from webshot package")
   )
 Description: With Rcade, you can launch some games in RStudio.
-Imports: utils, R6 (>= 2.0.0), yaml, assertthat, stringr, purrr, servr
+Depends: 
+    R (>= 3.0)
+Imports: 
+    assertthat, 
+    purrr, 
+    R6 (>= 2.0.0), 
+    servr,
+    stringr, 
+    utils, 
+    yaml
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
@@ -19,3 +32,4 @@ Collate:
     'utils.R'
     'HTML5Game.R'
     'games.R'
+URL: https://github.com/RLesur/Rcade/
