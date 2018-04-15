@@ -7,20 +7,22 @@ NULL
 HTML5Game <- R6Class("HTML5Game",
   public = list(
     # relative path inside the directory
-    initialize = function(name, github = NULL, use_servr, path, img = NULL, author = NULL, description = NULL) {
+    initialize = function(name, github = NULL, branch = "master", path, use_servr, img = NULL, author = NULL, description = NULL) {
       assert_that(is.string(name))
       if (!is.null(github)) assert_that(is.string(github))
-      assert_that(length(stringr::str_split(github, "/")[[1]]) == 2, msg = "Invalid github argument.")
+      if (!is.null(github)) assert_that(length(stringr::str_split(github, "/")[[1]]) == 2, msg = "Invalid github argument.")
+      if (!is.null(branch)) assert_that(is.string(branch))
+      assert_that(is.string(path))
       assert_that(is.scalar(use_servr))
       assert_that(is.logical(use_servr))
-      assert_that(is.string(path))
       if (!is.null(img)) assert_that(is.string(img))
       if (!is.null(author)) assert_that(is.string(author))
       if (!is.null(description)) assert_that(is.string(description))
       private$name <- name
       private$github <- github
-      private$use_servr <- use_servr
+      private$branch <- branch
       private$path <- path
+      private$use_servr <- use_servr
       private$img <- img
       private$author <- author
       private$description <- description
@@ -38,14 +40,14 @@ HTML5Game <- R6Class("HTML5Game",
     },
     install = function() {
       repo_name <- stringr::str_split(private$github, "/")[[1]][2]
-      url <- paste0("https://github.com/", private$github, "/archive/master.zip")
+      url <- paste0("https://github.com/", private$github, "/archive/", private$branch, ".zip")
       owd <- setwd(tempdir())
       on.exit(setwd(owd), add = TRUE)
       zipfile <- paste0(private$name, ".zip")
       download(url, zipfile, mode = 'wb')
       utils::unzip(zipfile)
       unlink(zipfile, force = TRUE)
-      assert_that(file.rename(paste0(repo_name, "-master"), private$name),
+      assert_that(file.rename(paste0(repo_name, "-", private$branch), private$name),
                   msg = "Unable to rename temporary directory.")
       dest_dir <- system.file("games", package = "Rcade")[1]
       assert_that(file.copy(private$name, dest_dir, recursive = TRUE),
@@ -59,8 +61,9 @@ HTML5Game <- R6Class("HTML5Game",
     # name of the game, it will be the name of the directory inside games
     name = NULL,
     github = NULL,
-    use_servr = NULL,
+    branch = NULL,
     path = NULL,
+    use_servr = NULL,
     img = NULL,
     author = NULL,
     description = NULL,

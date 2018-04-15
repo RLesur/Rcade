@@ -22,6 +22,12 @@ Rcade::games$`2048`$play()
 Rcade::games$GreenMahjong$play()
 ```
 
+## Try a new game 
+
+``` r
+games <- Rcade:::HTML5Game$new(name = "games", github = "TomMalbran/games", branch = "gh-pages", use_servr = FALSE, path = "index.html")
+```
+
 ## Credits
 
 This package includes non exported functions of the `webshot` package: since they are not exported, the source code is included in the `Rcade` package.  
