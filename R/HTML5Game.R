@@ -30,7 +30,6 @@ HTML5Game <- R6Class("HTML5Game",
       if (missing(use_servr))
         use_servr <- private$use_servr
       tmp_dir <- private$copy_ressources()
-      #utils::browseURL(file.path(tmp_dir, private$name, private$path))
       if (use_servr) {
         servr::httd(file.path(tmp_dir, private$name), initpath = private$path)
       } else {
