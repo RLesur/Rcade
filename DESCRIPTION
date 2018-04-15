@@ -19,6 +19,7 @@ Imports:
     assertthat, 
     purrr, 
     R6 (>= 2.0.0), 
+    rstudioapi (>= 0.7),
     servr,
     stringr, 
     utils, 

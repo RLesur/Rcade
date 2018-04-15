@@ -4,7 +4,7 @@
 \name{games}
 \alias{games}
 \title{Games for procRastinatoRs}
-\format{An object of class \code{list} of length 9.}
+\format{An object of class \code{Html5_games} (inherits from \code{list}) of length 9.}
 \usage{
 games
 }
