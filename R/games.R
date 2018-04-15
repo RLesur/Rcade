@@ -16,3 +16,11 @@ load_games <- function() {
 #'
 #' @export
 games <- load_games()
+
+#' @export
+print.Html5_games <- function(x, ...) {
+  is_installed <- sapply(x, function(x) x$is_installed())
+  cat(paste0(sort(
+    paste(names(is_installed), ifelse(is_installed, "(installed)", "(uninstalled)"))
+  ), collapse = "\n"))
+}
