@@ -16,7 +16,8 @@ Description: With Rcade, you can launch some games in RStudio.
 Depends: 
     R (>= 3.0)
 Imports: 
-    assertthat, 
+    assertthat,
+    crayon,
     purrr, 
     R6 (>= 2.0.0), 
     rstudioapi (>= 0.7),

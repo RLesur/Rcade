@@ -1,3 +1,4 @@
+#' @importFrom crayon green yellow
 #' @importFrom yaml read_yaml
 #' @importFrom purrr imap
 #' @include HTML5Game.R
@@ -21,6 +22,11 @@ games <- load_games()
 print.Html5_games <- function(x, ...) {
   is_installed <- sapply(x, function(x) x$is_installed())
   cat(paste0(sort(
-    paste(names(is_installed), ifelse(is_installed, "(installed)", "(uninstalled)"))
+    paste(names(is_installed),
+          ifelse(is_installed,
+                 crayon::green("(installed)"),
+                 crayon::yellow("(not yet installed)")
+          )
+    )
   ), collapse = "\n"))
 }
