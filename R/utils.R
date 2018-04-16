@@ -6,6 +6,7 @@ NULL
 # The webshot package is licensed under the GPL-2 license.
 # Author : Winston Chang
 # Contributors : Yihui Xie, Francois Guillem, Barret Schloerke
+# https://github.com/wch/webshot
 is_windows <- function() .Platform$OS.type == "windows"
 
 download <- function(url, destfile, mode = "w") {
