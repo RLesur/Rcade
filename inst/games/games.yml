@@ -51,3 +51,9 @@ SURVIVOR:
   path: index.html
   author: Scott Schiller
   description: "SURVIVOR: A HTML + CSS + JavaScript prototype based on the Commodore 64 version of Survivor from 1983"
+Pond:
+  github: Zolmeister/pond
+  need_servr: false
+  path: index.html
+  author: Zolmeister
+  description: "A narrow fellow in the Pond"
