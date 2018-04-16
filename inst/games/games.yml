@@ -57,3 +57,9 @@ Pond:
   path: index.html
   author: Zolmeister
   description: "A narrow fellow in the Pond"
+Core:
+  github: hakimel/Core
+  need_servr: false
+  path: index.html
+  author: Hakim El Hattab
+  description: "Core is a small game built using the HTML5 canvas element and plenty of JavaScript."
