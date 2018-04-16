@@ -70,7 +70,7 @@ Pond$play(TRUE)
 
 ### Do a pull request
 
-Games metadata are stored in `games.yml` file (under `inst/games` directory). You only have to add extra games to this file.
+Games metadata are stored in [`games.yml` file](https://github.com/RLesur/Rcade/blob/master/inst/games/games.yml) (under `inst/games` directory). You only have to add extra games to this file.
 
 ## Credits
 
