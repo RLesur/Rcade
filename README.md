@@ -1,6 +1,6 @@
 # Rcade
 
-The goal of `Rcade` is to provide access to games in order to waste some times in RStudio.
+The goal of `Rcade` is to provide access to games in order to waste some times in RStudio. You can play 2048, Tetris, Mario, Pacman, Spider Solitaire and others.
 
 ## Installation
 
@@ -35,7 +35,7 @@ Rcade::games$Pacman
 
 ## Motivation
 
-I always read the `Motivation` section first. Packages should always have a `Motivation` section in their `README` files.  
+*I always read the `Motivation` section first. Packages should always have a `Motivation` section in their `README` files.*  
 
 So, what is the motivation behind this useless package?  
 My first motivation was to test the RStudio viewer and I had this stupid idea to try some `HTML5` games. WHy? I don't know.  
@@ -50,24 +50,24 @@ There are hundreds of `HTML5` games on `GitHub`. You can try a new game with the
 Here's an example with the following repo: https://github.com/TomMalbran/games
 
 ``` r
-TMgames <- Rcade:::HTML5Game$new(name = "TMgames", github = "TomMalbran/games", branch = "gh-pages", need_servr = FALSE, path = "index.html")
+TomGames <- Rcade:::HTML5Game$new(name = "TomGames", github = "TomMalbran/games", branch = "gh-pages", need_servr = FALSE, path = "index.html")
 ```
 
 Therefore, you can try to launch the game with:
 
 ``` r
-TMgames
+TomGames
 ```
 
 If you get some troubles, you may try with a `HTTP` server:
 
 ``` r
-TMgames$play(TRUE)
+TomGames$play(TRUE)
 ```
 
 ### Do a pull request
 
-Games metadata are stored in a `YAML` file (`inst/games/games.yml`). You only have to add extra games to this file.
+Games metadata are stored in `games.yml` file (under `inst/games/`). You only have to add extra games to this file.
 
 ## Credits
 
