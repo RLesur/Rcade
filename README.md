@@ -47,26 +47,25 @@ Some folks loved the idea of playing in RStudio. So, I took some times to develo
 
 There are hundreds of `HTML5` games on [GitHub](https://github.com/). You can try a new game with the non exported `R6` constructor `Rcade:::HTML5Game`.
 
-Here's an example with the following repo: https://github.com/TomMalbran/games
+Here's an example with the following repo: https://github.com/Zolmeister/pond
 
 ``` r
-TomGames <- Rcade:::HTML5Game$new(name = "TomGames", 
-                                  github = "TomMalbran/games", 
-                                  branch = "gh-pages", 
-                                  need_servr = FALSE, 
-                                  path = "index.html")
+Pond <- Rcade:::HTML5Game$new(name = "pond", 
+                              github = "Zolmeister/pond", 
+                              need_servr = FALSE, 
+                              path = "index.html")
 ```
 
 Therefore, you can try to launch the game with:
 
 ``` r
-TomGames
+Pond
 ```
 
-If you get some troubles, you may try with a `HTTP` server:
+If you get some troubles with a game, you may try with a `HTTP` server:
 
 ``` r
-TomGames$play(TRUE)
+Pond$play(TRUE)
 ```
 
 ### Do a pull request
