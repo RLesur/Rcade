@@ -3,7 +3,7 @@ Title: Procrastinate with games in RStudio
 Version: 0.0.0.9100
 Authors@R: c(
   person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
-  person("Winston", "Chang", email = "winston@rstudio.com", role = c("ctb", "cph"), 
+  person("Winston", "Chang", role = c("ctb", "cph"), 
          comment = "download helpers from webshot package"),
   person("Yihui", "Xie", role = c("ctb", "cph"), 
          comment = "download helpers from webshot package"),

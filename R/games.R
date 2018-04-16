@@ -14,9 +14,21 @@ load_games <- function() {
 
 #' Games for procRastinatoRs
 #'
-#'
+#' A list of `HTML5` games. The first time you launch a game, you will be
+#' asked for installation.
 #'
 #' @export
+#' @examples
+#' # List available games:
+#' games
+#'
+#' \dontrun{
+#'
+#' games$`2048` # Play 2048
+#'
+#'
+#' games$Pacman # Play Pacman
+#' }
 games <- load_games()
 
 #' @export

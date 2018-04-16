@@ -9,6 +9,19 @@
 games
 }
 \description{
-Games for procRastinatoRs
+A list of \code{HTML5} games. The first time you launch a game, you will be
+asked for installation.
+}
+\examples{
+# List available games:
+games
+
+\dontrun{
+
+games$`2048` # Play 2048
+
+
+games$Pacman # Play Pacman
+}
 }
 \keyword{datasets}
