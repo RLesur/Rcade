@@ -51,6 +51,7 @@ Here's an example with the following repo: https://github.com/Zolmeister/pond
 
 ``` r
 Pond <- Rcade:::HTML5Game$new(name = "pond", 
+                              host = "github"
                               github = "Zolmeister/pond", 
                               need_servr = FALSE, 
                               path = "index.html")
