@@ -9,8 +9,8 @@ HTML5Game <- R6Class("HTML5Game",
   public = list(
     # relative path inside the directory
     initialize = function(name,
-                          host = "github",
-                          repo = NULL,
+                          host = "github", # host indicate where to find the game (github or gitlab)
+                          repo = NULL, # repo is the repository name on github or gitlab (was github in version of 16th april )
                           branch = "master",
                           path,
                           need_servr,
@@ -61,18 +61,19 @@ HTML5Game <- R6Class("HTML5Game",
     install = function() {
 
       repo_name <- stringr::str_split(private$repo, "/")[[1]][2]
-      ver = ""
+      # Gitlab zip files are at gitlab.com/username/repo/-/archive/filename.zip, so the variable "archive" is set to "/-/archive" for gitlab repos
+      archive = "/archive/"
       if (private$host == "gitlab") {
-        ver = "/-"
+        archive = "/-/archive/"
       }
-      url <- paste0("https://",private$host,".com/", private$repo,ver, "/archive/", private$branch, ".zip")
-
+      url <- paste0("https://",private$host,".com/", private$repo,archive, private$branch, ".zip")
       owd <- setwd(tempdir())
       on.exit(setwd(owd), add = TRUE)
       zipfile <- paste0("~/",private$name, ".zip")
       download(url, zipfile,mode = "wb")
       utils::unzip(zipfile)
       unlink(zipfile, force = TRUE)
+      # zip files donwloaded from gitlab have the commit ref in the end. The list.files function allows to get the full path of the repository
       assert_that(file.rename(list.files(pattern=paste0(repo_name, "-", private$branch)), private$name),
         msg = "Unable to rename temporary directory."
       )
@@ -89,7 +90,6 @@ HTML5Game <- R6Class("HTML5Game",
     is_installed = function() nzchar(system.file("games", private$name, package = "Rcade")[1])
   ),
   private = list(
-    # name of the game, it will be the name of the directory inside games
     name = NULL,
     host = NULL,
     repo = NULL,
