@@ -9,7 +9,8 @@ HTML5Game <- R6Class("HTML5Game",
   public = list(
     # relative path inside the directory
     initialize = function(name,
-                          github = NULL,
+                          host = "github", # host indicate where to find the game (github or gitlab)
+                          repo = NULL, # repo is the repository name on github or gitlab (was github in version of 16th april )
                           branch = "master",
                           path,
                           need_servr,
@@ -17,8 +18,10 @@ HTML5Game <- R6Class("HTML5Game",
                           author = NULL,
                           description = NULL) {
       assert_that(is.string(name))
-      if (!is.null(github)) assert_that(is.string(github))
-      if (!is.null(github)) assert_that(length(stringr::str_split(github, "/")[[1]]) == 2, msg = "Invalid github argument.")
+      if (!is.null(host)) assert_that(is.string(host))
+      if (!is.null(host)) assert_that(host %in% c(NULL,"github","gitlab"), msg="Only GitHub and GitLab supported")
+      if (!is.null(repo)) assert_that(is.string(repo))
+      if (!is.null(repo)) assert_that(length(stringr::str_split(repo, "/")[[1]]) == 2, msg = "Invalid repo argument.")
       if (!is.null(branch)) assert_that(is.string(branch))
       assert_that(is.string(path))
       assert_that(is.scalar(need_servr))
@@ -27,7 +30,8 @@ HTML5Game <- R6Class("HTML5Game",
       if (!is.null(author)) assert_that(is.string(author))
       if (!is.null(description)) assert_that(is.string(description))
       private$name <- name
-      private$github <- github
+      private$host <- host
+      private$repo <- repo
       private$branch <- branch
       private$path <- path
       private$need_servr <- need_servr
@@ -55,15 +59,22 @@ HTML5Game <- R6Class("HTML5Game",
       invisible(self)
     },
     install = function() {
-      repo_name <- stringr::str_split(private$github, "/")[[1]][2]
-      url <- paste0("https://github.com/", private$github, "/archive/", private$branch, ".zip")
+
+      repo_name <- stringr::str_split(private$repo, "/")[[1]][2]
+      # Gitlab zip files are at gitlab.com/username/repo/-/archive/filename.zip, so the variable "archive" is set to "/-/archive" for gitlab repos
+      archive = "/archive/"
+      if (private$host == "gitlab") {
+        archive = "/-/archive/"
+      }
+      url <- paste0("https://",private$host,".com/", private$repo,archive, private$branch, ".zip")
       owd <- setwd(tempdir())
       on.exit(setwd(owd), add = TRUE)
-      zipfile <- paste0(private$name, ".zip")
-      download(url, zipfile, mode = "wb")
+      zipfile <- paste0("~/",private$name, ".zip")
+      download(url, zipfile,mode = "wb")
       utils::unzip(zipfile)
       unlink(zipfile, force = TRUE)
-      assert_that(file.rename(paste0(repo_name, "-", private$branch), private$name),
+      # zip files donwloaded from gitlab have the commit ref in the end. The list.files function allows to get the full path of the repository
+      assert_that(file.rename(list.files(pattern=paste0(repo_name, "-", private$branch)), private$name),
         msg = "Unable to rename temporary directory."
       )
       dest_dir <- system.file("games", package = "Rcade")[1]
@@ -79,9 +90,9 @@ HTML5Game <- R6Class("HTML5Game",
     is_installed = function() nzchar(system.file("games", private$name, package = "Rcade")[1])
   ),
   private = list(
-    # name of the game, it will be the name of the directory inside games
     name = NULL,
-    github = NULL,
+    host = NULL,
+    repo = NULL,
     branch = NULL,
     path = NULL,
     need_servr = NULL,
